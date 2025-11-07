@@ -3,6 +3,7 @@
 
 import re
 from fluent.migrate.transforms import TransformPattern, COPY_PATTERN
+from fluent.migrate.helpers import transforms_from
 import fluent.syntax.ast as FTL
 
 
@@ -19,16 +20,20 @@ def migrate(ctx):
     ctx.add_transforms(
         path,
         path,
+        transforms_from(
+            """
+sync-device-name-input =
+    .aria-label = { COPY_PATTERN(path1, "sync-device-name-header") }
+    .placeholder = { $placeholder }
+""",
+            path1=path,
+        ),
+    )
+
+    ctx.add_transforms(
+        path,
+        path,
         [
-            FTL.Message(
-                id=FTL.Identifier("sync-device-name-input"),
-                attributes=[
-                    FTL.Attribute(
-                        id=FTL.Identifier("aria-label"),
-                        value=COPY_PATTERN(path, "sync-device-name-header"),
-                    ),
-                ],
-            ),
             FTL.Message(
                 id=FTL.Identifier("sync-device-name-change-2"),
                 attributes=[

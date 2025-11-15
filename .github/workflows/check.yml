@@ -3,7 +3,7 @@ name: Sync Fluent recipes
 on:
   workflow_dispatch:
   schedule:
-    - cron: "10 6,12,18 * * *"
+    - cron: "05 6,12,18 * * *"
 
 permissions:
   contents: write

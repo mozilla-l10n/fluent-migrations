@@ -16,7 +16,7 @@ def migrate(ctx):
         transforms_from(
             """
 tabs-group-header2 =
-    .label = {COPY_PATTERN(from_path, "tabs-group-header.label")}
+    .label = {COPY_PATTERN(from_path, "tabs-group-header")}
 """,
             from_path=source,
         ),

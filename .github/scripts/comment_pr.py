@@ -42,7 +42,7 @@ def comment_if_needed(session: requests.Session, pr_number: str) -> None:
         if comment_marker in (c.get("body") or ""):
             return
 
-    body = f"{comment_marker} There are pending migrations in https://github.com/flodolo/fluent-migrations"
+    body = f"{comment_marker} There are pending migrations in https://github.com/mozilla-l10n/fluent-migrations"
     gh_post(session, comments_url, {"body": body})
 
 

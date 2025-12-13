@@ -15,7 +15,7 @@ def migrate(ctx):
         transforms_from(
             """
 search-suggestions-cant-show-2 =
-    .message = {COPY_PATTERN(from_path, "search-suggestions-cant-show.message")}
+    .message = {COPY_PATTERN(from_path, "search-suggestions-cant-show")}
 """,
             from_path=target,
         ),

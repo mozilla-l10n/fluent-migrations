@@ -59,6 +59,9 @@ function echo_manual() {
     echo "creating a new one for a wet-run, add current-branch"
     echo "(e.g. 'migration.sh wet-run current-branch' to do a wet-run on the current branch)."
     echo "---"
+    echo "To skip the confirmation prompt, add skip-confirm"
+    echo "(e.g. 'migration.sh skip-confirm' to run without asking for confirmation)."
+    echo "---"
     echo "Multiple options can be combined. For example, for a prod migration:"
     echo "(e.g. 'migration.sh wet-run push' to run all locales, commit and push)."
 }
@@ -69,6 +72,7 @@ pull_repository=true
 push_repository=false
 wet_run=false
 create_branch=true
+skip_confirm=false
 
 # Check command parameters
 while [[ $# -gt 0 ]]
@@ -90,6 +94,9 @@ do
         current-branch)
             create_branch=false
         ;;
+        skip-confirm)
+            skip_confirm=true
+        ;;
         *)
             all_locales=false
             locale_code=$1
@@ -110,11 +117,14 @@ else
     echo "* Elaborate locale: ${locale_code}"
 fi
 
-read -p "Continue (y/N)?" -n 1 choice
-if [[ ! ${choice} =~ ^[Yy]$ ]]
+if [ "${skip_confirm}" = false ]
 then
-    printf "\nMigration aborted\n"
-    exit
+    read -p "Continue (y/N)?" -n 1 choice
+    if [[ ! ${choice} =~ ^[Yy]$ ]]
+    then
+        printf "\nMigration aborted\n"
+        exit
+    fi
 fi
 
 # Create the list of available migration recipes.

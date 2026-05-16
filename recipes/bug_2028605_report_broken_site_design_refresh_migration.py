@@ -15,23 +15,23 @@ def migrate(ctx):
         transforms_from(
             """
 report-broken-site-panel-reason-load-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-load")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-load.label")}
 report-broken-site-panel-reason-checkout-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-checkout")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-checkout.label")}
 report-broken-site-panel-reason-slow-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-slow2")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-slow2.label")}
 report-broken-site-panel-reason-media-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-media2")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-media2.label")}
 report-broken-site-panel-reason-content-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-content2")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-content2.label")}
 report-broken-site-panel-reason-account-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-account2")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-account2.label")}
 report-broken-site-panel-reason-adblocker-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-adblocker2")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-adblocker2.label")}
 report-broken-site-panel-reason-notsupported-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-notsupported")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-notsupported.label")}
 report-broken-site-panel-reason-other-moz-box-button =
-    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-other")}
+    .label = {COPY_PATTERN(from_path, "report-broken-site-panel-reason-other.label")}
 report-broken-site-panel-send-more-info-button =
     .label = {COPY_PATTERN(from_path, "report-broken-site-panel-send-more-info-link")}
 report-broken-site-panel-preview-header2 =

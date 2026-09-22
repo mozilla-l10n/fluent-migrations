@@ -1,3 +1,4 @@
 compare-locales==9.0.4
 fluent.migrate==0.13.3
+hglib==2.6.2
 requests==2.33.0
